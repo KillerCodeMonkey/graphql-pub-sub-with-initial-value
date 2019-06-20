@@ -1,6 +1,6 @@
 {
   "name": "graphql-pub-sub-with-initial-value",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "GraphQL PubSub with intial value handling",
   "scripts": {
     "test": "node_modules/.bin/jest --coverage && npm run lint",
@@ -15,6 +15,9 @@
   "author": "Bengt Weiße",
   "types": "lib/src/index.d.ts",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/KillerCodeMonkey/graphql-pub-sub-with-initial-value"
+  },
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^10",
