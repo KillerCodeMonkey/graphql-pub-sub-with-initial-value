@@ -1,6 +1,6 @@
 {
   "name": "graphql-pub-sub-with-inital-value",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "GraphQL PubSub with intial value handling",
   "scripts": {
     "test": "node_modules/.bin/jest --coverage && npm run lint",
