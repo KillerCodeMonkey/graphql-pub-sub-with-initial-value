@@ -1,6 +1,6 @@
 {
-  "name": "graphql-pub-sub-with-inital-value",
-  "version": "0.1.0",
+  "name": "graphql-pub-sub-with-initial-value",
+  "version": "0.2.0-1",
   "description": "GraphQL PubSub with intial value handling",
   "scripts": {
     "test": "node_modules/.bin/jest --coverage && npm run lint",
@@ -8,9 +8,9 @@
     "build": "rm -rf ./lib && microbundle --ts -i ./src/index.ts -o ./lib",
     "dev": "rm -rf ./dev-build && microbundle watch --ts -i ./src/index.ts -o ./dev-build"
   },
-  "main": "lib/graphql-pubsub-inital-value.js",
-  "umd:main": "lib/graphql-pubsub-inital-value.umd.js",
-  "module": "lib/graphql-pubsub-inital-value.mjs",
+  "main": "lib/graphql-pub-sub-initial-value.js",
+  "umd:main": "lib/graphql-pub-sub-initial-value.umd.js",
+  "module": "lib/graphql-pub-sub-initial-value.mjs",
   "source": "src/index.ts",
   "author": "Bengt Weiße",
   "license": "MIT",

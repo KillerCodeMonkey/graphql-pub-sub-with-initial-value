@@ -1,6 +1,6 @@
-# graphql-pub-sub-with-inital-value
+# graphql-pub-sub-with-initial-value
 
-[![Build Status](https://travis-ci.org/KillerCodeMonkey/datetime-periods.svg?branch=master)](https://travis-ci.org/KillerCodeMonkey/graphql-pub-sub-with-inital-value) [![codecov](https://codecov.io/gh/KillerCodeMonkey/datetime-periods/branch/master/graph/badge.svg)](https://codecov.io/gh/KillerCodeMonkey/graphql-pub-sub-with-inital-value)
+[![Build Status](https://travis-ci.org/KillerCodeMonkey/datetime-periods.svg?branch=master)](https://travis-ci.org/KillerCodeMonkey/graphql-pub-sub-with-initial-value) [![codecov](https://codecov.io/gh/KillerCodeMonkey/datetime-periods/branch/master/graph/badge.svg)](https://codecov.io/gh/KillerCodeMonkey/graphql-pub-sub-with-initial-value)
 
 GraphQLPupSubWithIntialValue is a simple npm package that extends GraphQLPubSub with an `asyncIteratorWithInitialState` method. It lets you define an async function how to get the initial value.
 
@@ -8,7 +8,7 @@ For more information checkout the [GraphQL-Subscriptions](https://github.com/apo
 
 ### Installation
 
-`npm install graphql-pub-sub-with-inital-value` or `yarn add graphql-pub-sub-with-inital-value`
+`npm install graphql-pub-sub-with-initial-value` or `yarn add graphql-pub-sub-with-initial-value`
 
 > This package has peerDependencies to `"graphql": "^14.3.1"` and `"graphql-subscriptions": "^1.1.0"`, which you have to install yourself.
 
@@ -22,7 +22,7 @@ const asyncInititalValueFn = () => {
   return Promise.resolve(['test'])
 }
 
-import { PubSubWithIntialValue } from 'graphql-pub-sub-with-inital-value'
+import { PubSubWithIntialValue } from 'graphql-pub-sub-with-initial-value'
 
 const pubSubWithInitialValue = new PubSubWithIntialValue()
 
@@ -35,7 +35,7 @@ It is recommended to put the pubSub on the context object during the ApolloServe
 
 ```TS
 import { GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql'
-import { PubSubWithIntialValue } from 'graphql-pub-sub-with-inital-value'
+import { PubSubWithIntialValue } from 'graphql-pub-sub-with-initial-value'
 
 export const subscription = new GraphQLObjectType({
   fields: {
