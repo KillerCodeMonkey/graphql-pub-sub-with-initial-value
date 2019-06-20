@@ -4,7 +4,7 @@ export interface AsyncIterableIteratorWithInitialState<T> extends AsyncIterableI
   initialValuePushed: boolean
 }
 
-export class PubSubIntialValue extends PubSub {
+export class PubSubWithIntialValue extends PubSub {
   private withInitialValue<T>(iterator: AsyncIterator<T>, getInitialValue: () => Promise<T>): AsyncIterableIteratorWithInitialState<T> {
     return {
       [Symbol.asyncIterator](): AsyncIterableIterator<T> { return this },
@@ -31,7 +31,7 @@ export class PubSubIntialValue extends PubSub {
     }
   }
 
-  public asyncIteratorWithInitialState<T>(topic: string | string[], initialValueFn: () => Promise<T>): AsyncIterableIteratorWithInitialState<T> {
+  public asyncIteratorWithInitialValue<T>(topic: string | string[], initialValueFn: () => Promise<T>): AsyncIterableIteratorWithInitialState<T> {
     return this.withInitialValue(this.asyncIterator<T>(topic), (): Promise<T> => initialValueFn())
   }
 }

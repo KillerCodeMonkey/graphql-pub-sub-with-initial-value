@@ -1,4 +1,4 @@
-import { PubSubIntialValue } from '../src'
+import { PubSubWithIntialValue } from '../src'
 
 interface TestData {
   id: number
@@ -21,12 +21,12 @@ const asyncInititalValueFn = (shouldResolve = true): Promise<TestData[]> => {
 
 describe('index.ts', () => {
   describe('#PubSubIntialValue', () => {
-    let pubsub: PubSubIntialValue
+    let pubsub: PubSubWithIntialValue
     let asyncIterator: any
 
     beforeEach(() => {
-      pubsub = new PubSubIntialValue()
-      pubsub.asyncIterator = jest.fn().mockImplementation((value?: any) => ({
+      pubsub = new PubSubWithIntialValue()
+      pubsub.asyncIterator = jest.fn().mockImplementation(() => ({
         [Symbol.asyncIterator]() { return this },
         next: (value?: any) => {
           return Promise.resolve({
@@ -41,11 +41,11 @@ describe('index.ts', () => {
           return Promise.reject(error);
         }
       }))
-      asyncIterator = pubsub.asyncIteratorWithInitialState<TestData[]>('TOPIC', asyncInititalValueFn)
+      asyncIterator = pubsub.asyncIteratorWithInitialValue<TestData[]>('TOPIC', asyncInititalValueFn)
     })
 
     it('has asyncIteratorWithInitialState function', () => {
-      expect(pubsub.asyncIteratorWithInitialState).toBeDefined()
+      expect(asyncIterator).toBeDefined()
     })
 
     describe('#asyncIteratorWithInitialState.next', () => {
