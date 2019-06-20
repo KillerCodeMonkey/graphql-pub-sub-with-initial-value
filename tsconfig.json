@@ -1,24 +1,7 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "outDir": "./lib/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "target": "es2015",
-    "typeRoots": [
-      "jest",
-      "node_modules/@types"
-    ],
     "lib": [
       "dom",
-      "es2018",
       "esnext.asynciterable"
     ]
   }
