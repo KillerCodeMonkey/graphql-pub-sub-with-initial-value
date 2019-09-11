@@ -1,6 +1,6 @@
 {
   "name": "graphql-pub-sub-with-initial-value",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "GraphQL PubSub with intial value handling",
   "scripts": {
     "test": "node_modules/.bin/jest --coverage && npm run lint",
@@ -19,19 +19,19 @@
     "url": "https://github.com/KillerCodeMonkey/graphql-pub-sub-with-initial-value"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
+    "@types/jest": "^24.0.18",
     "@types/node": "^12",
-    "@typescript-eslint/eslint-plugin": "^1.10.2",
-    "@typescript-eslint/parser": "^1.10.2",
-    "acorn": "^6.1.1",
-    "eslint": "^5.16.0",
-    "graphql": "^14.3.1",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "acorn": "^6.0.0",
+    "eslint": "^6.3.0",
+    "graphql": "^14.5.4",
     "graphql-subscriptions": "^1.1.0",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "microbundle": "^0.11.0",
     "rollup": "<1",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.5.2"
+    "typescript": "^3.6.3"
   },
   "keywords": [
     "graphql",

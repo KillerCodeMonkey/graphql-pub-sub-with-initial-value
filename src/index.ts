@@ -9,7 +9,7 @@ export class PubSubWithIntialValue extends PubSub {
     return {
       [Symbol.asyncIterator](): AsyncIterableIterator<T> { return this },
       initialValuePushed: false,
-      next(value?: unknown): Promise<IteratorResult<T>> {
+      next(value?: any): Promise<IteratorResult<T>> {
         if (this.initialValuePushed) {
           return iterator.next(value).then(({ value, done }: IteratorResult<T>): IteratorResult<T> => ({
             done,
@@ -22,10 +22,10 @@ export class PubSubWithIntialValue extends PubSub {
           })
         }
       },
-      return(value?: unknown): Promise<IteratorResult<T>> {
+      return(value?: any): Promise<IteratorResult<T>> {
         return iterator.return!(value)
       },
-      throw(value?: unknown): Promise<IteratorResult<T>> {
+      throw(value?: any): Promise<IteratorResult<T>> {
         return iterator.throw!(value)
       }
     }
