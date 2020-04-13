@@ -1,6 +1,6 @@
 # graphql-pub-sub-with-initial-value
 
-[![Build Status](https://travis-ci.org/KillerCodeMonkey/datetime-periods.svg?branch=master)](https://travis-ci.org/KillerCodeMonkey/graphql-pub-sub-with-initial-value) [![codecov](https://codecov.io/gh/KillerCodeMonkey/datetime-periods/branch/master/graph/badge.svg)](https://codecov.io/gh/KillerCodeMonkey/graphql-pub-sub-with-initial-value)
+[![Build Status](https://github.com/KillerCodeMonkey/graphql-pub-sub-with-initial-value/workflows/CI/badge.svg)](https://github.com/KillerCodeMonkey/graphql-pub-sub-with-initial-value/actions/) [![codecov](https://codecov.io/gh/KillerCodeMonkey/datetime-periods/branch/master/graph/badge.svg)](https://codecov.io/gh/KillerCodeMonkey/graphql-pub-sub-with-initial-value)
 
 GraphQLPupSubWithIntialValue is a simple npm package that extends GraphQLPubSub with an `asyncIteratorWithInitialState` method. It lets you define an async function how to get the initial value.
 
