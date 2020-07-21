@@ -31,7 +31,7 @@
     "microbundle": "^0.11.0",
     "rollup": "<1",
     "ts-jest": "^25.5.1",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "keywords": [
     "graphql",
