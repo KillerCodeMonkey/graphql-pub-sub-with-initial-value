@@ -1,7 +1,6 @@
 coverage
 github
 __test__
-src
 .eslintrc
 .gitignore
 .nvmrc
