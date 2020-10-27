@@ -4,6 +4,8 @@
 
 GraphQLPupSubWithIntialValue is a simple npm package that extends GraphQLPubSub with an `asyncIteratorWithInitialState` method. It lets you define an async function how to get the initial value.
 
+Additionally it provides the possibilty to execute some cleanup work, when a client disconnects or the AsynIterator is closed. For that you can use the exported `withCancel` or the `pubSub.withCancel` function.
+
 For more information checkout the [GraphQL-Subscriptions](https://github.com/apollographql/graphql-subscriptions)
 
 ## Donate/Support
@@ -14,23 +16,11 @@ If you like my work, feel free to support it. Donations to the project are alway
 
 PayPal: [PayPal.Me/bengtler](http://paypal.me/bengtler)
 
-BTC Wallet Address:
-`3QVyr2tpRLBCw1kBQ59sTDraV6DTswq8Li`
-
-ETH Wallet Address:
-`0x394d44f3b6e3a4f7b4d44991e7654b0cab4af68f`
-
-LTC Wallet Address:
-`MFif769WSZ1g7ReAzzDE7TJVqtkFpmoTyT`
-
-XRP Wallet Address:
-`rXieaAC3nevTKgVu2SYoShjTCS2Tfczqx?dt=159046833`
-
 ### Installation
 
 `npm install graphql-pub-sub-with-initial-value` or `yarn add graphql-pub-sub-with-initial-value`
 
-> This package has peerDependencies to `"graphql": "^14.3.1"` and `"graphql-subscriptions": "^1.1.0"`, which you have to install yourself.
+> This package has peerDependencies to `"graphql": "^14.3.1 || ^15.3.0"` and `"graphql-subscriptions": "^1.1.0"`, which you have to install yourself.
 
 ### Usage
 
@@ -46,7 +36,11 @@ import { PubSubWithIntialValue } from 'graphql-pub-sub-with-initial-value'
 
 const pubSubWithInitialValue = new PubSubWithIntialValue()
 
-pubSubWithInitialValue.asyncIteratorWithInitialValue<string[]>('TOPIC', asyncInititalValueFn)
+const asyncIterator = pubSubWithInitialValue.asyncIteratorWithInitialValue<string[]>('TOPIC', asyncInititalValueFn)
+
+pubSubWithInitialValue.withCancel(asyncIterator, () => console.log('on close/disconnect'))
+// triggers cancel/disconnect
+asyncIterator.return()
 ```
 
 #### In a resolver of subsciption (ApolloServer)

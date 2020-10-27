@@ -4,6 +4,27 @@ export interface AsyncIterableIteratorWithInitialState<T> extends AsyncIterableI
   initialValuePushed: boolean
 }
 
+export const withCancel = <T, P>(
+  asyncIterator: AsyncIterator<T | undefined>,
+  onCancel: (args?: P) => void,
+  args?: P
+): AsyncIterator<T | undefined> => {
+  if (!asyncIterator.return) {
+    asyncIterator.return = () => Promise.resolve({
+      done: true,
+      value: undefined
+    })
+  }
+
+  const savedReturn = asyncIterator.return.bind(asyncIterator)
+  asyncIterator.return = () => {
+    onCancel(args)
+    return savedReturn()
+  }
+
+  return asyncIterator
+}
+
 export class PubSubWithIntialValue extends PubSub {
   private withInitialValue<T>(iterator: AsyncIterator<T>, getInitialValue: () => Promise<T>): AsyncIterableIteratorWithInitialState<T> {
     return {
@@ -33,5 +54,9 @@ export class PubSubWithIntialValue extends PubSub {
 
   public asyncIteratorWithInitialValue<T>(topic: string | string[], initialValueFn: () => Promise<T>): AsyncIterableIteratorWithInitialState<T> {
     return this.withInitialValue(this.asyncIterator<T>(topic), (): Promise<T> => initialValueFn())
+  }
+
+  public withCancel<T, P>(asyncIterator: AsyncIterator<T | undefined>, onCancel: (args?: P) => void, args?: P): AsyncIterator<T, any, undefined> {
+    return withCancel<T, P>(asyncIterator, onCancel, args)
   }
 }

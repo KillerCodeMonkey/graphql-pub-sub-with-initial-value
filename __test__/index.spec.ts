@@ -1,4 +1,4 @@
-import { PubSubWithIntialValue } from '../src'
+import { PubSubWithIntialValue, withCancel } from '../src'
 
 interface TestData {
   id: number
@@ -20,6 +20,32 @@ const asyncInititalValueFn = (shouldResolve = true): Promise<TestData[]> => {
 }
 
 describe('index.ts', () => {
+  describe('#withCancel', () => {
+    it('executes logic on client disconnect', () => {
+      const pubsub = new PubSubWithIntialValue()
+      pubsub.asyncIterator = jest.fn().mockImplementation(() => ({
+        [Symbol.asyncIterator]() { return this },
+        next: (value?: any) => {
+          return Promise.resolve({
+            done: false,
+            value
+          })
+        },
+        return() {
+          return Promise.resolve({ value: undefined, done: true });
+        },
+        throw(error: any) {
+          return Promise.reject(error);
+        }
+      }))
+      const asyncIterator = pubsub.asyncIteratorWithInitialValue<TestData[]>('TOPIC', asyncInititalValueFn)
+      let canceled = false
+      withCancel(asyncIterator, () => canceled = true)
+      asyncIterator.return()
+      expect(canceled).toBe(true)
+    })
+  })
+
   describe('#PubSubIntialValue', () => {
     let pubsub: PubSubWithIntialValue
     let asyncIterator: any
@@ -46,6 +72,23 @@ describe('index.ts', () => {
 
     it('has asyncIteratorWithInitialState function', () => {
       expect(asyncIterator).toBeDefined()
+    })
+
+    describe('#withCancel', () => {
+      it('executes callback on client disconnect', () => {
+        let canceled = false
+        pubsub.withCancel(asyncIterator, () => canceled = true)
+        asyncIterator.return()
+        expect(canceled).toBe(true)
+      })
+      it('executes callback on iterator without return()', () => {
+        let canceled = false
+        delete asyncIterator.return
+        asyncIterator = pubsub.withCancel(asyncIterator, () => canceled = true)
+        expect(asyncIterator.return).toBeDefined()
+        asyncIterator.return()
+        expect(canceled).toBe(true)
+      })
     })
 
     describe('#asyncIteratorWithInitialState.next', () => {
