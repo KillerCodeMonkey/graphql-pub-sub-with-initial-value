@@ -22,7 +22,7 @@
     "@types/jest": "^26.0.15",
     "@types/node": "*",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
-    "@typescript-eslint/parser": "^4.7.0",
+    "@typescript-eslint/parser": "^4.8.1",
     "acorn": "^8.0.4",
     "eslint": "^7.13.0",
     "graphql": "^14.7.0 || ^15.3.0",
