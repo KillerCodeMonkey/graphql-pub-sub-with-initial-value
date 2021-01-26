@@ -23,7 +23,7 @@
     "@types/node": "*",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
-    "acorn": "^8.0.4",
+    "acorn": "^8.0.5",
     "eslint": "^7.17.0",
     "graphql": "^14.7.0 || ^15.3.0",
     "graphql-subscriptions": "^1.1.0",
