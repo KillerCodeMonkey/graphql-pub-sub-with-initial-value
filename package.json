@@ -19,7 +19,7 @@
     "url": "https://github.com/KillerCodeMonkey/graphql-pub-sub-with-initial-value"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.22",
+    "@types/jest": "^26.0.23",
     "@types/node": "*",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
