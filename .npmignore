@@ -2,6 +2,7 @@ coverage
 github
 __test__
 .eslintrc
+eslint.config.mjs
 .gitignore
 .nvmrc
 jest.config.js
