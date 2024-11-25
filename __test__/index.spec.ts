@@ -23,7 +23,7 @@ describe('index.ts', () => {
   describe('#withCancel', () => {
     it('executes logic on client disconnect', () => {
       const pubsub = new PubSubWithIntialValue()
-      pubsub.asyncIterator = jest.fn().mockImplementation(() => ({
+      pubsub.asyncIterableIterator = jest.fn().mockImplementation(() => ({
         [Symbol.asyncIterator]() { return this },
         next: (value?: any) => {
           return Promise.resolve({
@@ -52,7 +52,7 @@ describe('index.ts', () => {
 
     beforeEach(() => {
       pubsub = new PubSubWithIntialValue()
-      pubsub.asyncIterator = jest.fn().mockImplementation(() => ({
+      pubsub.asyncIterableIterator = jest.fn().mockImplementation(() => ({
         [Symbol.asyncIterator]() { return this },
         next: (value?: any) => {
           return Promise.resolve({

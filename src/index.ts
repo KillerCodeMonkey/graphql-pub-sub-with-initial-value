@@ -53,7 +53,7 @@ export class PubSubWithIntialValue extends PubSub {
   }
 
   public asyncIteratorWithInitialValue<T>(topic: string | string[], initialValueFn: () => Promise<T>): AsyncIterableIteratorWithInitialState<T> {
-    return this.withInitialValue(this.asyncIterator<T>(topic), (): Promise<T> => initialValueFn())
+    return this.withInitialValue(this.asyncIterableIterator<T>(topic), (): Promise<T> => initialValueFn())
   }
 
   public withCancel<T, P>(asyncIterator: AsyncIterator<T | undefined>, onCancel: (args?: P) => void, args?: P): AsyncIterator<T, any, undefined> {
