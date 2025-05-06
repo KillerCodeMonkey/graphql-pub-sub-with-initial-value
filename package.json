@@ -30,7 +30,7 @@
     "@typescript-eslint/parser": "^8.25.0",
     "acorn": "^8.14.0",
     "eslint": "^9.21.0",
-    "graphql": "^16.10.0",
+    "graphql": "^16.11.0",
     "graphql-subscriptions": "^3.0.0",
     "jest": "^29.7.0",
     "microbundle": "^0.15.1",
