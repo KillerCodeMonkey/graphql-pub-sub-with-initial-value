@@ -20,7 +20,7 @@ PayPal: [PayPal.Me/bengtler](http://paypal.me/bengtler)
 
 `npm install graphql-pub-sub-with-initial-value` or `yarn add graphql-pub-sub-with-initial-value`
 
-> This package has peerDependencies to `"graphql": "^14.3.1 || ^15.3.0"` and `"graphql-subscriptions": "^1.1.0"`, which you have to install yourself.
+> This package has peerDependencies to `graphql` and `graphql-subscriptions`, which you have to install yourself.
 
 ### Usage
 

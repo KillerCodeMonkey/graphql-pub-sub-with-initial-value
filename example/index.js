@@ -1,4 +1,4 @@
-import { PubSubWithIntialValue, withCancel } from '../lib/graphql-pub-sub-with-initial-value.modern'
+import { PubSubWithIntialValue, withCancel } from '../lib/graphql-pub-sub-with-initial-value.mjs'
 
 const asyncInititalValueFn = () => Promise.resolve(['test'])
 

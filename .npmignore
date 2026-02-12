@@ -21,3 +21,4 @@ dev-build
 config.gypi
 CVS
 npm-debug.log
+.parcelrc

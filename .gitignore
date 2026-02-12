@@ -2,3 +2,4 @@ node_modules
 coverage
 .rts2*
 dev-build
+.parcel-cache
