@@ -1,14 +1,20 @@
-coverage
-github
-__test__
-.eslintrc
-eslint.config.mjs
-.gitignore
-.nvmrc
-jest.config.js
-tsconfig.json
-dev-build
+__test__/
+.github/
+.parcel-cache/
+coverage/
+example/
+src/
 
+.gitignore
+.parcelrc
+eslint.config.mjs
+jest.config.js
+package-lock.json
+tsconfig.json
+
+.eslintrc
+.nvmrc
+dev-build
 .*.swp
 ._*
 .DS_Store
@@ -21,4 +27,3 @@ dev-build
 config.gypi
 CVS
 npm-debug.log
-.parcelrc
