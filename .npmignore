@@ -3,7 +3,7 @@ __test__/
 .parcel-cache/
 coverage/
 example/
-src/
+/src/
 
 .gitignore
 .parcelrc
