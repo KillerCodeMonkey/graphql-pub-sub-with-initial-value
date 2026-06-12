@@ -34,7 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^8.58.0",
     "@typescript-eslint/parser": "^8.58.0",
     "acorn": "^8.16.0",
-    "esbuild": "0.27.3",
+    "esbuild": "0.28.1",
     "eslint": "^9.39.4",
     "graphql": "^16.13.2",
     "graphql-subscriptions": "^3.0.0",
